@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://l32t1hna2mdw"]
+
+[ext_resource type="Script" uid="uid://d087tvvqkh0ht" path="res://Objects/present_object.gd" id="1_2dqhg"]
+[ext_resource type="Texture2D" uid="uid://cnws51jl3o7wu" path="res://assets/object/12916676491797329824my_bridge_brick1-md.png" id="2_yvaj4"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r0axl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_yvaj4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6nnlk"]
+size = Vector2(485, 70)
+
+[node name="Bridge" type="RigidBody2D"]
+gravity_scale = 0.0
+script = ExtResource("1_2dqhg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(92.5, 4)
+scale = Vector2(1.61667, 1.10256)
+sprite_frames = SubResource("SpriteFrames_r0axl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(99.5, -6)
+shape = SubResource("RectangleShape2D_6nnlk")

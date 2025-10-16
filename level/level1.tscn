@@ -1,13 +1,31 @@
-[gd_scene load_steps=3 format=4 uid="uid://chymrp3y3t8vi"]
+[gd_scene load_steps=7 format=4 uid="uid://chymrp3y3t8vi"]
 
 [ext_resource type="TileSet" uid="uid://dvu6xanwufudg" path="res://level/tileset.res" id="1_cc4m7"]
 [ext_resource type="PackedScene" uid="uid://csd2ad8qo3lm" path="res://player/player.tscn" id="2_w28nb"]
+[ext_resource type="PackedScene" uid="uid://b5splq66ydd33" path="res://mecanism/timetravel.tscn" id="3_gd1gh"]
+[ext_resource type="PackedScene" uid="uid://l32t1hna2mdw" path="res://Objects/bridge.tscn" id="4_afkyo"]
+[ext_resource type="PackedScene" uid="uid://c02cdvebp78ps" path="res://Objects/tree.tscn" id="5_a1r6t"]
+[ext_resource type="PackedScene" uid="uid://dcukkqojrvn4u" path="res://Objects/sprout.tscn" id="6_pkqcj"]
 
 [node name="Level1" type="Node"]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAAEAAUAAAAAAAEAAAAFAAUAAAABAAEAAAAGAAUAAAABAAEAAAAHAAUAAAABAAEAAAAIAAUAAAABAAEAAAAJAAUAAAABAAEAAAAKAAUAAAABAAEAAAALAAUAAAACAAEAAAAMAAYAAAACAAEAAAANAAcAAAACAAEAAAAHAAYAAAABAAIAAAALAAYAAAABAAMAAAAJAAcAAAABAAMAAAAFAAcAAAABAAMAAAAEAAYAAAABAAIAAAAEAAcAAAABAAIAAAAFAAYAAAABAAIAAAAGAAYAAAABAAMAAAAGAAcAAAABAAIAAAAHAAcAAAABAAIAAAAIAAYAAAABAAIAAAAIAAcAAAABAAIAAAAJAAYAAAABAAIAAAAKAAYAAAABAAIAAAAKAAcAAAABAAIAAAALAAcAAAABAAIAAAAMAAcAAAABAAIAAAADAAYAAAAAAAEAAAACAAcAAAAAAAEAAAADAAcAAAABAAIAAAA=")
+tile_map_data = PackedByteArray("AAAAAAYAAAABAAEAAAABAAYAAAABAAEAAAACAAYAAAABAAEAAAADAAYAAAABAAEAAAAEAAYAAAABAAEAAAAFAAYAAAABAAEAAAAGAAYAAAABAAEAAAAHAAYAAAABAAEAAAAIAAYAAAABAAEAAAAJAAYAAAABAAEAAAAKAAYAAAABAAEAAAALAAYAAAABAAIAAAASAAYAAAABAAIAAAATAAYAAAABAAEAAAAUAAYAAAABAAEAAAAVAAYAAAABAAEAAAAWAAYAAAABAAEAAAARAAcAAAABAAIAAAAQAAcAAAABAAIAAAAPAAcAAAABAAIAAAAOAAcAAAABAAIAAAANAAcAAAABAAIAAAAMAAcAAAABAAIAAAA=")
 tile_set = ExtResource("1_cc4m7")
 
 [node name="Player" parent="." instance=ExtResource("2_w28nb")]
-position = Vector2(511, 167)
+position = Vector2(76, 344)
+scale = Vector2(0.75, 0.75)
+
+[node name="Timetravel" parent="." instance=ExtResource("3_gd1gh")]
+
+[node name="Obstacles" type="Node2D" parent="."]
+
+[node name="Bridge" parent="Obstacles" instance=ExtResource("4_afkyo")]
+position = Vector2(861, 347)
+
+[node name="Tree" parent="Obstacles" instance=ExtResource("5_a1r6t")]
+position = Vector2(593, 316)
+
+[node name="Sprout" parent="Obstacles" instance=ExtResource("6_pkqcj")]
+position = Vector2(666, 351)

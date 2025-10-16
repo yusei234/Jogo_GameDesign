@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://dcukkqojrvn4u"]
+
+[ext_resource type="Script" uid="uid://cioqwexnkubw6" path="res://Objects/past_object.gd" id="1_4j0em"]
+[ext_resource type="Texture2D" uid="uid://dtlyap1gkxa1d" path="res://assets/object/sprout.png" id="1_lgmto"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4j0em"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_lgmto")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lgmto"]
+size = Vector2(15, 17)
+
+[node name="Sprout" type="RigidBody2D"]
+gravity_scale = 0.0
+script = ExtResource("1_4j0em")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(-2.28882e-05, 2.00001)
+scale = Vector2(0.0595833, 0.0647917)
+sprite_frames = SubResource("SpriteFrames_4j0em")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2.5, 1.5)
+shape = SubResource("RectangleShape2D_lgmto")

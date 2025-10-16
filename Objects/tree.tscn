@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://c02cdvebp78ps"]
+
+[ext_resource type="Texture2D" uid="uid://bq2s6iopagbpa" path="res://assets/object/tree.png" id="1_i4ofe"]
+[ext_resource type="Script" uid="uid://d087tvvqkh0ht" path="res://Objects/present_object.gd" id="1_qca5r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i4ofe"]
+size = Vector2(180, 208)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qca5r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_i4ofe")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Tree" type="RigidBody2D"]
+gravity_scale = 0.0
+script = ExtResource("1_qca5r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(10, -28)
+shape = SubResource("RectangleShape2D_i4ofe")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(16, -24)
+scale = Vector2(0.214765, 0.253915)
+sprite_frames = SubResource("SpriteFrames_qca5r")
