@@ -3,6 +3,7 @@ extends CharacterBody2D
 var speed = 300.0
 var jump_velocity = -540.0
 var blocked = false
+var kid = true
 
 func _ready() -> void:
 	Events.connect("age_changed", _on_age_change)
@@ -38,10 +39,12 @@ func _physics_process(delta: float) -> void:
 func _on_age_change(new_age):
 	print(new_age)
 	if new_age == Events.Age.KID:
-		$AnimatedSprite2D.scale = Vector2(0.8, 0.8)
+		$AnimatedSprite2D.scale = Vector2(0.75, 0.65)
 		$CollisionShape2D.scale = Vector2(1.0, 1.0)
 		jump_velocity = -540.0
+		self.kid = true
 	else:
 		$AnimatedSprite2D.scale = Vector2(1.6, 1.6)
 		$CollisionShape2D.scale = Vector2(2.0, 2.0)
 		jump_velocity = -810.0
+		self.kid = false

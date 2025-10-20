@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=4 uid="uid://bbtemc6lugqxa"]
+
+[ext_resource type="TileSet" uid="uid://dvu6xanwufudg" path="res://level/tileset.res" id="1_1daj6"]
+[ext_resource type="PackedScene" uid="uid://csd2ad8qo3lm" path="res://player/player.tscn" id="2_ld4st"]
+[ext_resource type="PackedScene" uid="uid://q3ex03ydb7vn" path="res://mecanism/agetravel.tscn" id="3_w1a6n"]
+[ext_resource type="PackedScene" uid="uid://detg3drk1udpf" path="res://Objects/breakable_brick.tscn" id="4_ld4st"]
+
+[node name="Level2" type="Node"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+use_parent_material = true
+tile_map_data = PackedByteArray("AAAAAAYAAAABAAEAAAABAAYAAAABAAEAAAACAAYAAAABAAEAAAAEAAMAAAABAAIAAAAKAAMAAAABAAIAAAALAAMAAAABAAIAAAAMAAMAAAABAAIAAAANAAMAAAABAAIAAAADAAQAAAABAAIAAAADAAcAAAABAAIAAAAEAAcAAAABAAIAAAAFAAcAAAABAAIAAAAGAAcAAAABAAIAAAAHAAcAAAABAAIAAAAHAAgAAAABAAIAAAAIAAgAAAABAAIAAAAIAAcAAAABAAIAAAAJAAcAAAABAAIAAAAKAAcAAAABAAIAAAALAAcAAAABAAIAAAAMAAcAAAABAAIAAAANAAcAAAABAAIAAAAOAAcAAAABAAIAAAAPAAcAAAABAAIAAAASAAAAAAABAAIAAAASAAYAAAABAAIAAAAJAP//AAABAAIAAAARAAAAAAABAAIAAAATAAIAAAABAAIAAAAGAAIAAAABAAIAAAAGAAAAAAABAAIAAAD//wYAAAABAAIAAAD+/wYAAAABAAIAAAD9/wYAAAABAAIAAAA=")
+tile_set = ExtResource("1_1daj6")
+
+[node name="Player" parent="." instance=ExtResource("2_ld4st")]
+position = Vector2(288, 148)
+scale = Vector2(0.75, 0.75)
+
+[node name="Obstacles" type="Node2D" parent="."]
+
+[node name="Agetravel" parent="." instance=ExtResource("3_w1a6n")]
+
+[node name="BreakableBrick" parent="." instance=ExtResource("4_ld4st")]
+position = Vector2(38, 186)
+
+[node name="BreakableBrick2" parent="." instance=ExtResource("4_ld4st")]
+position = Vector2(215, 354)

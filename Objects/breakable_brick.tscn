@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://detg3drk1udpf"]
+
+[ext_resource type="Script" uid="uid://brbipk2xx2tif" path="res://Objects/breakable_brick.gd" id="1_yxeax"]
+[ext_resource type="Texture2D" uid="uid://d3c7omn44kcpm" path="res://assets/object/Spr_towerblock_0.png" id="2_bgf3k"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tq1vc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_bgf3k")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e2hym"]
+size = Vector2(47, 72)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yxeax"]
+size = Vector2(67, 48)
+
+[node name="BreakableBrick" type="RigidBody2D"]
+mass = 0.001
+gravity_scale = 0.0
+script = ExtResource("1_yxeax")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_tq1vc")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_e2hym")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2.5, 0)
+shape = SubResource("RectangleShape2D_yxeax")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_body_entered"]
