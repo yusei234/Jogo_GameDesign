@@ -4,6 +4,7 @@ var speed = 300.0
 var jump_velocity = -540.0
 var blocked = false
 var kid = true
+var faced_direction = "right"
 
 func _ready() -> void:
 	Events.connect("age_changed", _on_age_change)
@@ -18,21 +19,23 @@ func _physics_process(delta: float) -> void:
 		# As good practice, you should replace UI actions with custom gameplay actions.
 		var direction := Input.get_axis("left", "right") 
 		if direction:
+			faced_direction =  "left" if direction < 0 else "right" 
 			velocity.x = direction * speed
-			#if is_on_floor(): 
-				#$AnimatedSprite2D.animation = "walk"
+			if is_on_floor(): 
+				$AnimatedSprite2D.animation = "walk_" + faced_direction
+			else:
+				$AnimatedSprite2D.animation = "jump_" + faced_direction
 			$AnimatedSprite2D.play()
-			$AnimatedSprite2D.flip_h = direction < 0
 		else:
 			velocity.x = move_toward(velocity.x, 0, speed)
 			if is_on_floor(): 
-				$AnimatedSprite2D.animation = "idle"
+				$AnimatedSprite2D.animation = "idle_" + faced_direction
 			$AnimatedSprite2D.play()
 			
 		# Handle jump.
 		if Input.is_action_just_pressed("up") and is_on_floor():
 			velocity.y = jump_velocity
-			#$AnimatedSprite2D.animation = "jump"
+			$AnimatedSprite2D.animation = "jump_" + faced_direction
 
 		move_and_slide()
 
