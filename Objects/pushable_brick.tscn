@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://dntwcot00rscc"]
+
+[ext_resource type="Script" uid="uid://b2ximvprsepf7" path="res://Objects/pushable_brick.gd" id="1_p8vam"]
+[ext_resource type="Texture2D" uid="uid://d3c7omn44kcpm" path="res://assets/object/Spr_towerblock_0.png" id="2_svhwo"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tq1vc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_svhwo")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e2hym"]
+size = Vector2(159, 72)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yxeax"]
+size = Vector2(65, 48)
+
+[node name="PushableBrick" type="RigidBody2D"]
+modulate = Color(1, 0.12549, 0.211765, 1)
+mass = 0.1
+script = ExtResource("1_p8vam")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_tq1vc")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(20.5, 0)
+shape = SubResource("RectangleShape2D_e2hym")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.5, 0)
+shape = SubResource("RectangleShape2D_yxeax")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
