@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://bv518y1mmffl2"]
+
+[ext_resource type="Script" uid="uid://b3icygy142rcg" path="res://utils/level_template.gd" id="1_7iepv"]
+
+[node name="LevelTemplate" type="Node"]
+script = ExtResource("1_7iepv")
+
+[node name="Background" type="Node2D" parent="."]
+
+[node name="SfxPlayer" type="Node" parent="."]
+
+[node name="Victory" type="Node2D" parent="."]
+visible = false

@@ -22,6 +22,7 @@ gravity_scale = 0.0
 script = ExtResource("1_2dqhg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
 position = Vector2(92.5, 4)
 scale = Vector2(1.61667, 1.10256)
 sprite_frames = SubResource("SpriteFrames_r0axl")
@@ -29,3 +30,4 @@ sprite_frames = SubResource("SpriteFrames_r0axl")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(99.5, -6)
 shape = SubResource("RectangleShape2D_6nnlk")
+disabled = true

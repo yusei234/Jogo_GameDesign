@@ -117,9 +117,6 @@ animations = [{
 "texture": ExtResource("8_wodsf")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_8t03j")
-}, {
-"duration": 1.0,
 "texture": ExtResource("9_32hag")
 }],
 "loop": true,
@@ -129,9 +126,6 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("6_yllr7")
-}, {
-"duration": 1.0,
-"texture": ExtResource("2_hg6s5")
 }, {
 "duration": 1.0,
 "texture": ExtResource("7_kb6p2")
@@ -153,7 +147,7 @@ script = ExtResource("1_oul6g")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 position = Vector2(17.375, 38.9095)
 sprite_frames = SubResource("SpriteFrames_yllr7")
-animation = &"bebe_walk_left"
+animation = &"idoso_idle_left"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 position = Vector2(-4, 38)

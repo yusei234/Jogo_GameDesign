@@ -1,13 +1,17 @@
-[gd_scene load_steps=7 format=4 uid="uid://chymrp3y3t8vi"]
+[gd_scene load_steps=9 format=4 uid="uid://chymrp3y3t8vi"]
 
 [ext_resource type="TileSet" uid="uid://dvu6xanwufudg" path="res://level/tileset.res" id="1_cc4m7"]
+[ext_resource type="PackedScene" uid="uid://bv518y1mmffl2" path="res://utils/level_template.tscn" id="1_pkqcj"]
 [ext_resource type="PackedScene" uid="uid://csd2ad8qo3lm" path="res://player/player.tscn" id="2_w28nb"]
 [ext_resource type="PackedScene" uid="uid://b5splq66ydd33" path="res://mecanism/timetravel.tscn" id="3_gd1gh"]
 [ext_resource type="PackedScene" uid="uid://l32t1hna2mdw" path="res://Objects/bridge.tscn" id="4_afkyo"]
 [ext_resource type="PackedScene" uid="uid://c02cdvebp78ps" path="res://Objects/tree.tscn" id="5_a1r6t"]
 [ext_resource type="PackedScene" uid="uid://dcukkqojrvn4u" path="res://Objects/sprout.tscn" id="6_pkqcj"]
+[ext_resource type="PackedScene" uid="uid://c1vrg1ajlxv2c" path="res://Objects/watch_part.tscn" id="8_hoo32"]
 
 [node name="Level1" type="Node"]
+
+[node name="LevelTemplate" parent="." instance=ExtResource("1_pkqcj")]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 use_parent_material = true
@@ -32,3 +36,6 @@ position = Vector2(593, 316)
 position = Vector2(590, 355)
 collision_layer = 0
 collision_mask = 0
+
+[node name="WatchPart" parent="." instance=ExtResource("8_hoo32")]
+position = Vector2(1342, 106)

@@ -1,12 +1,26 @@
-[gd_scene load_steps=6 format=4 uid="uid://bbtemc6lugqxa"]
+[gd_scene load_steps=7 format=4 uid="uid://bbtemc6lugqxa"]
 
 [ext_resource type="TileSet" uid="uid://dvu6xanwufudg" path="res://level/tileset.res" id="1_1daj6"]
+[ext_resource type="PackedScene" uid="uid://bv518y1mmffl2" path="res://utils/level_template.tscn" id="1_puws0"]
 [ext_resource type="PackedScene" uid="uid://csd2ad8qo3lm" path="res://player/player.tscn" id="2_ld4st"]
 [ext_resource type="PackedScene" uid="uid://q3ex03ydb7vn" path="res://mecanism/agetravel.tscn" id="3_w1a6n"]
 [ext_resource type="PackedScene" uid="uid://detg3drk1udpf" path="res://Objects/breakable_brick.tscn" id="4_ld4st"]
 [ext_resource type="PackedScene" uid="uid://dntwcot00rscc" path="res://Objects/pushable_brick.tscn" id="5_w1a6n"]
 
 [node name="Level3" type="Node"]
+
+[node name="LevelTemplate" parent="." instance=ExtResource("1_puws0")]
+
+[node name="Obstacles" type="Node2D" parent="."]
+
+[node name="BreakableBrick" parent="Obstacles" instance=ExtResource("4_ld4st")]
+position = Vector2(38, 186)
+
+[node name="BreakableBrick2" parent="Obstacles" instance=ExtResource("4_ld4st")]
+position = Vector2(215, 354)
+
+[node name="PushableBrick" parent="Obstacles" instance=ExtResource("5_w1a6n")]
+position = Vector2(517, 348)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 use_parent_material = true
@@ -17,15 +31,4 @@ tile_set = ExtResource("1_1daj6")
 position = Vector2(288, 148)
 scale = Vector2(0.75, 0.75)
 
-[node name="Obstacles" type="Node2D" parent="."]
-
 [node name="Agetravel" parent="." instance=ExtResource("3_w1a6n")]
-
-[node name="BreakableBrick" parent="." instance=ExtResource("4_ld4st")]
-position = Vector2(38, 186)
-
-[node name="BreakableBrick2" parent="." instance=ExtResource("4_ld4st")]
-position = Vector2(215, 354)
-
-[node name="PushableBrick" parent="." instance=ExtResource("5_w1a6n")]
-position = Vector2(517, 348)

@@ -10,6 +10,12 @@ var idade = "bebe"
 func _ready() -> void:
 	Events.connect("age_changed", _on_age_change)
 
+func _process(delta: float) -> void:
+	if (position.y > 1000):
+		Events.emit_signal("fall")
+		print("fall")
+	
+
 func _physics_process(delta: float) -> void:
 	if not blocked:
 		# Add the gravity.
@@ -44,13 +50,15 @@ func _on_age_change(new_age):
 	print(new_age)
 	if new_age == Events.Age.KID:
 		$CollisionShape2D.scale = Vector2(1.0, 1.0)
+		$AnimatedSprite2D.scale = Vector2(1.0, 1.0)
 		jump_velocity = -540.0
 		speed = 300.0
 		idade = "bebe"
 		self.kid = true
 	else:
 		$CollisionShape2D.scale = Vector2(1.5, 1.5)
-		jump_velocity = -810.0
+		$AnimatedSprite2D.scale = Vector2(0.7, 0.7)
+		jump_velocity = -700.0
 		speed = 200.0
 		idade = "idoso"
 		self.kid = false
