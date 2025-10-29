@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://cywyl4ofqhmpj"]
+
+[ext_resource type="Script" uid="uid://di83oa8s5mgx0" path="res://Objects/collectible.gd" id="1_6x32e"]
+[ext_resource type="Texture2D" uid="uid://b37pf87wtk47q" path="res://assets/object/gouden-12-sovereign-munt-voorkant-web_big.png" id="2_rgo0y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_030fg"]
+size = Vector2(102, 103)
+
+[node name="Collectible" type="Node2D"]
+script = ExtResource("1_6x32e")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(123.5, 125)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("2_rgo0y")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(125, 125.5)
+shape = SubResource("RectangleShape2D_030fg")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

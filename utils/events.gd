@@ -10,3 +10,4 @@ signal block_break
 signal victory
 signal restart
 signal fall
+signal coin_collected

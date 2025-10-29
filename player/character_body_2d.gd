@@ -6,9 +6,11 @@ var blocked = false
 var kid = true
 var faced_direction = "right"
 var idade = "bebe"
+var gravity = 1.0
 
 func _ready() -> void:
 	Events.connect("age_changed", _on_age_change)
+	Events.connect("coin_collected", _on_coin_collected)
 
 func _process(delta: float) -> void:
 	if (position.y > 1000):
@@ -20,14 +22,14 @@ func _physics_process(delta: float) -> void:
 	if not blocked:
 		# Add the gravity.
 		if not is_on_floor():
-			velocity += get_gravity() * delta
+			velocity += get_gravity() * delta * gravity
 		
 		# Get the input direction and handle the movement/deceleration.
 		# As good practice, you should replace UI actions with custom gameplay actions.
 		var direction := Input.get_axis("left", "right") 
 		if direction:
 			faced_direction =  "left" if direction < 0 else "right" 
-			velocity.x = direction * speed
+			velocity.x = direction * speed / gravity
 			if is_on_floor(): 
 				$AnimatedSprite2D.animation = idade + "_walk_" + faced_direction
 			else:
@@ -41,7 +43,7 @@ func _physics_process(delta: float) -> void:
 			
 		# Handle jump.
 		if Input.is_action_just_pressed("up") and is_on_floor():
-			velocity.y = jump_velocity
+			velocity.y = jump_velocity / gravity
 			$AnimatedSprite2D.animation = idade + "_jump_" + faced_direction
 
 		move_and_slide()
@@ -51,14 +53,17 @@ func _on_age_change(new_age):
 	if new_age == Events.Age.KID:
 		$CollisionShape2D.scale = Vector2(1.0, 1.0)
 		$AnimatedSprite2D.scale = Vector2(1.0, 1.0)
-		jump_velocity = -540.0
-		speed = 300.0
+		jump_velocity = -540.0 / gravity
+		speed = 300.0 / gravity
 		idade = "bebe"
 		self.kid = true
 	else:
 		$CollisionShape2D.scale = Vector2(1.5, 1.5)
 		$AnimatedSprite2D.scale = Vector2(0.7, 0.7)
-		jump_velocity = -700.0
-		speed = 200.0
+		jump_velocity = -700.0 /gravity
+		speed = 200.0 / gravity
 		idade = "idoso"
 		self.kid = false
+		
+func _on_coin_collected():
+	gravity = 1.2
