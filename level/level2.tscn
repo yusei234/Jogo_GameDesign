@@ -1,23 +1,45 @@
-[gd_scene load_steps=5 format=4 uid="uid://c0kjhbf42rjks"]
+[gd_scene load_steps=10 format=4 uid="uid://c0kjhbf42rjks"]
 
-[ext_resource type="TileSet" uid="uid://dvu6xanwufudg" path="res://level/tileset.res" id="1_axulw"]
-[ext_resource type="PackedScene" uid="uid://bv518y1mmffl2" path="res://utils/level_template.tscn" id="1_h2oih"]
-[ext_resource type="PackedScene" uid="uid://csd2ad8qo3lm" path="res://player/player.tscn" id="2_43ny1"]
-[ext_resource type="PackedScene" uid="uid://q3ex03ydb7vn" path="res://mecanism/agetravel.tscn" id="3_qf5ud"]
+[ext_resource type="TileSet" uid="uid://dvu6xanwufudg" path="res://level/tileset.res" id="1_cc4m7"]
+[ext_resource type="PackedScene" uid="uid://bv518y1mmffl2" path="res://utils/level_template.tscn" id="1_pkqcj"]
+[ext_resource type="PackedScene" uid="uid://csd2ad8qo3lm" path="res://player/player.tscn" id="2_w28nb"]
+[ext_resource type="PackedScene" uid="uid://b5splq66ydd33" path="res://mecanism/timetravel.tscn" id="3_gd1gh"]
+[ext_resource type="PackedScene" uid="uid://l32t1hna2mdw" path="res://Objects/bridge.tscn" id="4_afkyo"]
+[ext_resource type="PackedScene" uid="uid://c02cdvebp78ps" path="res://Objects/tree.tscn" id="5_a1r6t"]
+[ext_resource type="PackedScene" uid="uid://dcukkqojrvn4u" path="res://Objects/sprout.tscn" id="6_pkqcj"]
+[ext_resource type="PackedScene" uid="uid://c1vrg1ajlxv2c" path="res://Objects/watch_part.tscn" id="8_hoo32"]
+[ext_resource type="PackedScene" uid="uid://cywyl4ofqhmpj" path="res://Objects/collectible.tscn" id="9_vscsl"]
 
-[node name="Level2" type="Node"]
+[node name="Level1" type="Node"]
 
-[node name="LevelTemplate" parent="." instance=ExtResource("1_h2oih")]
+[node name="LevelTemplate" parent="." instance=ExtResource("1_pkqcj")]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 use_parent_material = true
-tile_map_data = PackedByteArray("AAAAAAYAAAABAAEAAAABAAYAAAABAAEAAAACAAYAAAABAAEAAAADAAYAAAABAAEAAAAEAAYAAAABAAEAAAAFAAYAAAABAAEAAAAGAAYAAAABAAEAAAAHAAYAAAABAAEAAAAIAAYAAAABAAEAAAAJAAYAAAABAAEAAAAKAAYAAAABAAEAAAAUAAYAAAABAAEAAAAVAAYAAAABAAEAAAALAAYAAAABAAEAAAAMAAYAAAABAAEAAAANAAYAAAABAAEAAAAKAAMAAAABAAIAAAAKAAIAAAABAAIAAAAKAAEAAAABAAIAAAAKAAAAAAABAAIAAAAKAP//AAABAAIAAAAUAP//AAABAAIAAAAQAAIAAAABAAIAAAARAAIAAAABAAIAAAASAAYAAAABAAEAAAATAAYAAAABAAEAAAAUAAAAAAABAAIAAAAUAAEAAAABAAIAAAAWAAQAAAABAAIAAAAXAAQAAAABAAIAAAAYAAQAAAABAAIAAAAZAAYAAAABAAEAAAAaAAYAAAABAAEAAAAbAAYAAAABAAEAAAADAAMAAAABAAIAAAAEAAMAAAABAAIAAAAFAAMAAAABAAIAAAAGAAMAAAABAAIAAAAHAAMAAAABAAIAAAAIAAMAAAABAAIAAAAJAAMAAAABAAIAAAAJAAIAAAABAAIAAAAIAAIAAAABAAIAAAAHAAIAAAABAAIAAAAGAAIAAAABAAIAAAAFAAIAAAABAAIAAAAEAAIAAAABAAIAAAADAAIAAAABAAIAAAADAAEAAAABAAIAAAADAAAAAAABAAIAAAADAP//AAABAAIAAAAEAP//AAABAAIAAAAFAP//AAABAAIAAAAGAP//AAABAAIAAAAHAP//AAABAAIAAAAIAP//AAABAAIAAAAJAP//AAABAAIAAAAJAAAAAAABAAIAAAAIAAEAAAABAAIAAAAHAAEAAAABAAIAAAAGAAEAAAABAAIAAAAFAAEAAAABAAIAAAAFAAAAAAABAAIAAAAEAAAAAAABAAIAAAAEAAEAAAABAAIAAAAGAAAAAAABAAIAAAAIAP7/AAABAAIAAAAIAAAAAAABAAIAAAAHAAAAAAABAAIAAAAJAAEAAAABAAIAAAAKAP7/AAABAAIAAAAKAP3/AAABAAIAAAALAP3/AAABAAIAAAAMAP3/AAABAAIAAAANAP3/AAABAAIAAAAOAP3/AAABAAIAAAAPAP3/AAABAAIAAAAQAP3/AAABAAIAAAARAP3/AAABAAIAAAASAP3/AAABAAIAAAATAP3/AAABAAIAAAAUAP3/AAABAAIAAAAUAP7/AAABAAIAAAAVAAEAAAABAAIAAAAWAAEAAAABAAIAAAAXAAEAAAABAAIAAAAYAAEAAAABAAIAAAAZAAEAAAABAAIAAAAaAAEAAAABAAIAAAAbAAEAAAABAAIAAAAPAAMAAAABAAIAAAAQAAMAAAABAAIAAAA=")
-tile_set = ExtResource("1_axulw")
+tile_map_data = PackedByteArray("AAAAAAYAAAABAAEAAAABAAYAAAABAAEAAAACAAYAAAABAAEAAAADAAYAAAABAAEAAAAEAAYAAAABAAEAAAAFAAYAAAABAAEAAAAGAAYAAAABAAEAAAAHAAYAAAABAAEAAAAIAAYAAAABAAEAAAAJAAYAAAABAAEAAAAKAAYAAAABAAEAAAALAAYAAAABAAIAAAASAAYAAAABAAIAAAATAAYAAAABAAEAAAAUAAYAAAABAAEAAAAVAAYAAAABAAEAAAAWAAYAAAABAAEAAAA=")
+tile_set = ExtResource("1_cc4m7")
 
-[node name="Player" parent="." instance=ExtResource("2_43ny1")]
-position = Vector2(61, 242)
+[node name="Player" parent="." instance=ExtResource("2_w28nb")]
+position = Vector2(35, 248)
 scale = Vector2(0.75, 0.75)
+
+[node name="Timetravel" parent="." instance=ExtResource("3_gd1gh")]
 
 [node name="Obstacles" type="Node2D" parent="."]
 
-[node name="Agetravel" parent="." instance=ExtResource("3_qf5ud")]
+[node name="Bridge" parent="Obstacles" instance=ExtResource("4_afkyo")]
+position = Vector2(861, 347)
+
+[node name="Tree" parent="Obstacles" instance=ExtResource("5_a1r6t")]
+position = Vector2(593, 316)
+
+[node name="Sprout" parent="Obstacles" instance=ExtResource("6_pkqcj")]
+position = Vector2(590, 355)
+collision_layer = 0
+collision_mask = 0
+
+[node name="WatchPart" parent="." instance=ExtResource("8_hoo32")]
+position = Vector2(1342, 106)
+
+[node name="Collectible" parent="." instance=ExtResource("9_vscsl")]
+position = Vector2(174, 23)

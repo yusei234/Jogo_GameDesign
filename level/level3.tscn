@@ -1,34 +1,23 @@
-[gd_scene load_steps=7 format=4 uid="uid://bbtemc6lugqxa"]
+[gd_scene load_steps=5 format=4 uid="uid://c0kjhbf42rjks"]
 
-[ext_resource type="TileSet" uid="uid://dvu6xanwufudg" path="res://level/tileset.res" id="1_1daj6"]
-[ext_resource type="PackedScene" uid="uid://bv518y1mmffl2" path="res://utils/level_template.tscn" id="1_puws0"]
-[ext_resource type="PackedScene" uid="uid://csd2ad8qo3lm" path="res://player/player.tscn" id="2_ld4st"]
-[ext_resource type="PackedScene" uid="uid://q3ex03ydb7vn" path="res://mecanism/agetravel.tscn" id="3_w1a6n"]
-[ext_resource type="PackedScene" uid="uid://detg3drk1udpf" path="res://Objects/breakable_brick.tscn" id="4_ld4st"]
-[ext_resource type="PackedScene" uid="uid://dntwcot00rscc" path="res://Objects/pushable_brick.tscn" id="5_w1a6n"]
+[ext_resource type="TileSet" uid="uid://dvu6xanwufudg" path="res://level/tileset.res" id="1_axulw"]
+[ext_resource type="PackedScene" uid="uid://bv518y1mmffl2" path="res://utils/level_template.tscn" id="1_h2oih"]
+[ext_resource type="PackedScene" uid="uid://csd2ad8qo3lm" path="res://player/player.tscn" id="2_43ny1"]
+[ext_resource type="PackedScene" uid="uid://q3ex03ydb7vn" path="res://mecanism/agetravel.tscn" id="3_qf5ud"]
 
-[node name="Level3" type="Node"]
+[node name="Level2" type="Node"]
 
-[node name="LevelTemplate" parent="." instance=ExtResource("1_puws0")]
-
-[node name="Obstacles" type="Node2D" parent="."]
-
-[node name="BreakableBrick" parent="Obstacles" instance=ExtResource("4_ld4st")]
-position = Vector2(38, 186)
-
-[node name="BreakableBrick2" parent="Obstacles" instance=ExtResource("4_ld4st")]
-position = Vector2(215, 354)
-
-[node name="PushableBrick" parent="Obstacles" instance=ExtResource("5_w1a6n")]
-position = Vector2(517, 348)
+[node name="LevelTemplate" parent="." instance=ExtResource("1_h2oih")]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 use_parent_material = true
-tile_map_data = PackedByteArray("AAAAAAYAAAABAAEAAAABAAYAAAABAAEAAAACAAYAAAABAAEAAAAEAAMAAAABAAIAAAAKAAMAAAABAAIAAAALAAMAAAABAAIAAAAMAAMAAAABAAIAAAANAAMAAAABAAIAAAADAAQAAAABAAIAAAADAAcAAAABAAIAAAAEAAcAAAABAAIAAAAFAAcAAAABAAIAAAAGAAcAAAABAAIAAAAHAAcAAAABAAIAAAAHAAgAAAABAAIAAAAIAAgAAAABAAIAAAAIAAcAAAABAAIAAAAJAAcAAAABAAIAAAAKAAcAAAABAAIAAAALAAcAAAABAAIAAAAMAAcAAAABAAIAAAANAAcAAAABAAIAAAAOAAcAAAABAAIAAAAPAAcAAAABAAIAAAASAAAAAAABAAIAAAASAAYAAAABAAIAAAAJAP//AAABAAIAAAARAAAAAAABAAIAAAATAAIAAAABAAIAAAAGAAIAAAABAAIAAAAGAAAAAAABAAIAAAD//wYAAAABAAIAAAD+/wYAAAABAAIAAAD9/wYAAAABAAIAAAA=")
-tile_set = ExtResource("1_1daj6")
+tile_map_data = PackedByteArray("AAAAAAYAAAABAAEAAAABAAYAAAABAAEAAAACAAYAAAABAAEAAAADAAYAAAABAAEAAAAEAAYAAAABAAEAAAAFAAYAAAABAAEAAAAGAAYAAAABAAEAAAAHAAYAAAABAAEAAAAIAAYAAAABAAEAAAAJAAYAAAABAAEAAAAKAAYAAAABAAEAAAAUAAYAAAABAAEAAAAVAAYAAAABAAEAAAALAAYAAAABAAEAAAAMAAYAAAABAAEAAAANAAYAAAABAAEAAAAKAAMAAAABAAIAAAAKAAIAAAABAAIAAAAKAAEAAAABAAIAAAAKAAAAAAABAAIAAAAKAP//AAABAAIAAAAUAP//AAABAAIAAAAQAAIAAAABAAIAAAARAAIAAAABAAIAAAASAAYAAAABAAEAAAATAAYAAAABAAEAAAAUAAAAAAABAAIAAAAUAAEAAAABAAIAAAAWAAQAAAABAAIAAAAXAAQAAAABAAIAAAAYAAQAAAABAAIAAAAZAAYAAAABAAEAAAAaAAYAAAABAAEAAAAbAAYAAAABAAEAAAADAAMAAAABAAIAAAAEAAMAAAABAAIAAAAFAAMAAAABAAIAAAAGAAMAAAABAAIAAAAHAAMAAAABAAIAAAAIAAMAAAABAAIAAAAJAAMAAAABAAIAAAAJAAIAAAABAAIAAAAIAAIAAAABAAIAAAAHAAIAAAABAAIAAAAGAAIAAAABAAIAAAAFAAIAAAABAAIAAAAEAAIAAAABAAIAAAADAAIAAAABAAIAAAADAAEAAAABAAIAAAADAAAAAAABAAIAAAADAP//AAABAAIAAAAEAP//AAABAAIAAAAFAP//AAABAAIAAAAGAP//AAABAAIAAAAHAP//AAABAAIAAAAIAP//AAABAAIAAAAJAP//AAABAAIAAAAJAAAAAAABAAIAAAAIAAEAAAABAAIAAAAHAAEAAAABAAIAAAAGAAEAAAABAAIAAAAFAAEAAAABAAIAAAAFAAAAAAABAAIAAAAEAAAAAAABAAIAAAAEAAEAAAABAAIAAAAGAAAAAAABAAIAAAAIAP7/AAABAAIAAAAIAAAAAAABAAIAAAAHAAAAAAABAAIAAAAJAAEAAAABAAIAAAAKAP7/AAABAAIAAAAKAP3/AAABAAIAAAALAP3/AAABAAIAAAAMAP3/AAABAAIAAAANAP3/AAABAAIAAAAOAP3/AAABAAIAAAAPAP3/AAABAAIAAAAQAP3/AAABAAIAAAARAP3/AAABAAIAAAASAP3/AAABAAIAAAATAP3/AAABAAIAAAAUAP3/AAABAAIAAAAUAP7/AAABAAIAAAAVAAEAAAABAAIAAAAWAAEAAAABAAIAAAAXAAEAAAABAAIAAAAYAAEAAAABAAIAAAAZAAEAAAABAAIAAAAaAAEAAAABAAIAAAAbAAEAAAABAAIAAAAPAAMAAAABAAIAAAAQAAMAAAABAAIAAAA=")
+tile_set = ExtResource("1_axulw")
 
-[node name="Player" parent="." instance=ExtResource("2_ld4st")]
-position = Vector2(288, 148)
+[node name="Player" parent="." instance=ExtResource("2_43ny1")]
+position = Vector2(61, 242)
 scale = Vector2(0.75, 0.75)
 
-[node name="Agetravel" parent="." instance=ExtResource("3_w1a6n")]
+[node name="Obstacles" type="Node2D" parent="."]
+
+[node name="Agetravel" parent="." instance=ExtResource("3_qf5ud")]
