@@ -1,13 +1,13 @@
 [gd_scene load_steps=5 format=3 uid="uid://dcukkqojrvn4u"]
 
 [ext_resource type="Script" uid="uid://cioqwexnkubw6" path="res://Objects/past_object.gd" id="1_4j0em"]
-[ext_resource type="Texture2D" uid="uid://dtlyap1gkxa1d" path="res://assets/object/sprout.png" id="1_lgmto"]
+[ext_resource type="Texture2D" uid="uid://dtubvofc7yth0" path="res://assets/object/home_sprout.png" id="2_4j0em"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4j0em"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_lgmto")
+"texture": ExtResource("2_4j0em")
 }],
 "loop": true,
 "name": &"default",
@@ -22,8 +22,8 @@ gravity_scale = 0.0
 script = ExtResource("1_4j0em")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-2.28882e-05, 2.00001)
-scale = Vector2(0.0595833, 0.0647917)
+position = Vector2(2.5, -9)
+scale = Vector2(0.984375, 0.9375)
 sprite_frames = SubResource("SpriteFrames_4j0em")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

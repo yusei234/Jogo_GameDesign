@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://1oeiubyksqvb"]
+
+[ext_resource type="Script" uid="uid://cnh18elsboymi" path="res://Objects/bronze.gd" id="1_b4epn"]
+[ext_resource type="Texture2D" uid="uid://ct2n1hy0jo4st" path="res://assets/object/Bronze.png" id="2_b4epn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fnbos"]
+size = Vector2(71, 72)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ogyhs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_b4epn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Bronze" type="RigidBody2D"]
+mass = 0.1
+gravity_scale = 0.0
+script = ExtResource("1_b4epn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_fnbos")
+disabled = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(-0.499996, 1)
+scale = Vector2(1.10938, 1.125)
+sprite_frames = SubResource("SpriteFrames_ogyhs")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

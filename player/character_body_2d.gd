@@ -31,7 +31,7 @@ func _physics_process(delta: float) -> void:
 		var direction := Input.get_axis("left", "right") 
 		if direction:
 			faced_direction =  "left" if direction < 0 else "right" 
-			velocity.x = direction * speed / gravity * time_speed
+			velocity.x = direction * speed / gravity
 			if is_on_floor(): 
 				$AnimatedSprite2D.animation = idade + "_walk_" + faced_direction
 			else:
@@ -45,7 +45,7 @@ func _physics_process(delta: float) -> void:
 			
 		# Handle jump.
 		if Input.is_action_just_pressed("up") and is_on_floor():
-			velocity.y = jump_velocity / gravity
+			velocity.y = jump_velocity / gravity * time_speed
 			$AnimatedSprite2D.animation = idade + "_jump_" + faced_direction
 
 		move_and_slide()
@@ -71,4 +71,5 @@ func _on_coin_collected():
 	gravity *= 1.2
 	
 func _on_tempo_changed(new_value):
-	time_speed = time_speed * (1 + 0.5*new_value) 
+	Engine.time_scale = 1 + new_value*0.5
+	time_speed = 1.2 if new_value == -1 else 1

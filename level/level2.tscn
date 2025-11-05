@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://c1vrg1ajlxv2c" path="res://Objects/watch_part.tscn" id="8_hoo32"]
 [ext_resource type="PackedScene" uid="uid://cywyl4ofqhmpj" path="res://Objects/collectible.tscn" id="9_vscsl"]
 
-[node name="Level1" type="Node"]
+[node name="Level2" type="Node"]
 
 [node name="LevelTemplate" parent="." instance=ExtResource("1_pkqcj")]
 

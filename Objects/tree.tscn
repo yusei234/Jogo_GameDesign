@@ -1,16 +1,16 @@
 [gd_scene load_steps=5 format=3 uid="uid://c02cdvebp78ps"]
 
-[ext_resource type="Texture2D" uid="uid://bq2s6iopagbpa" path="res://assets/object/tree.png" id="1_i4ofe"]
 [ext_resource type="Script" uid="uid://d087tvvqkh0ht" path="res://Objects/present_object.gd" id="1_qca5r"]
+[ext_resource type="Texture2D" uid="uid://qwaggwp4omlb" path="res://assets/object/home_tree.png" id="2_qca5r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i4ofe"]
-size = Vector2(180, 208)
+size = Vector2(320, 427)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qca5r"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_i4ofe")
+"texture": ExtResource("2_qca5r")
 }],
 "loop": true,
 "name": &"default",
@@ -22,12 +22,11 @@ gravity_scale = 0.0
 script = ExtResource("1_qca5r")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(10, -28)
+position = Vector2(-32, -137.5)
 shape = SubResource("RectangleShape2D_i4ofe")
 disabled = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-visible = false
-position = Vector2(16, -24)
-scale = Vector2(0.214765, 0.253915)
+position = Vector2(-47, -259)
+scale = Vector2(6.4375, 5.26562)
 sprite_frames = SubResource("SpriteFrames_qca5r")

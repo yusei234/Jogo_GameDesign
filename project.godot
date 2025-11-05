@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Jogo_Design"
-run/main_scene="uid://chymrp3y3t8vi"
+run/main_scene="uid://ccw4yat0c3wdr"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
