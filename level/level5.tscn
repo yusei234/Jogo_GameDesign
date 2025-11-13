@@ -1,0 +1,71 @@
+[gd_scene load_steps=12 format=4 uid="uid://digae5cvt6vfx"]
+
+[ext_resource type="PackedScene" uid="uid://bv518y1mmffl2" path="res://utils/level_template.tscn" id="1_nfnjx"]
+[ext_resource type="PackedScene" uid="uid://detg3drk1udpf" path="res://Objects/breakable_brick.tscn" id="2_wum6e"]
+[ext_resource type="PackedScene" uid="uid://dntwcot00rscc" path="res://Objects/pushable_brick.tscn" id="3_rkopr"]
+[ext_resource type="PackedScene" uid="uid://17k75n0sr0tt" path="res://Objects/gold.tscn" id="4_pkjk0"]
+[ext_resource type="PackedScene" uid="uid://by51xdjmkv5h1" path="res://Objects/silver.tscn" id="5_1eya2"]
+[ext_resource type="PackedScene" uid="uid://datxaxbrujw1" path="res://Objects/button.tscn" id="6_klaxm"]
+[ext_resource type="PackedScene" uid="uid://csd2ad8qo3lm" path="res://player/player.tscn" id="7_x8w8t"]
+[ext_resource type="PackedScene" uid="uid://q3ex03ydb7vn" path="res://mecanism/agetravel.tscn" id="8_ragw8"]
+[ext_resource type="Script" uid="uid://bcqpaahosk0xq" path="res://level/platform.gd" id="9_nnxrg"]
+[ext_resource type="TileSet" uid="uid://c2cii48h6fwrt" path="res://level/pastTileset.tres" id="10_0v5lu"]
+
+[sub_resource type="Curve2D" id="Curve2D_ij3b7"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 314, 2, 0, 0, 0, 0, 0, 0)
+}
+point_count = 2
+
+[node name="Level5" type="Node"]
+
+[node name="LevelTemplate" parent="." instance=ExtResource("1_nfnjx")]
+
+[node name="Obstacles" type="Node2D" parent="."]
+
+[node name="BreakableBrick" parent="Obstacles" instance=ExtResource("2_wum6e")]
+position = Vector2(38, 186)
+
+[node name="BreakableBrick2" parent="Obstacles" instance=ExtResource("2_wum6e")]
+position = Vector2(232, 366)
+
+[node name="PushableBrick" parent="Obstacles" instance=ExtResource("3_rkopr")]
+position = Vector2(517, 348)
+
+[node name="Gold" parent="Obstacles" instance=ExtResource("4_pkjk0")]
+position = Vector2(948, 383)
+
+[node name="silver" parent="Obstacles" instance=ExtResource("5_1eya2")]
+position = Vector2(971, 170)
+id = 1
+
+[node name="Button" parent="Obstacles" instance=ExtResource("6_klaxm")]
+position = Vector2(383, 392)
+
+[node name="Button2" parent="Obstacles" instance=ExtResource("6_klaxm")]
+position = Vector2(707, 393)
+id = 1
+
+[node name="Player" parent="." instance=ExtResource("7_x8w8t")]
+position = Vector2(288, 148)
+scale = Vector2(0.75, 0.75)
+
+[node name="Agetravel" parent="." instance=ExtResource("8_ragw8")]
+
+[node name="Platform" type="Node2D" parent="."]
+script = ExtResource("9_nnxrg")
+
+[node name="Path2D" type="Path2D" parent="Platform"]
+curve = SubResource("Curve2D_ij3b7")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Platform/Path2D"]
+position = Vector2(314, 2)
+rotation = -3.13522
+loop = false
+
+[node name="Gold" parent="Platform/Path2D/PathFollow2D" instance=ExtResource("4_pkjk0")]
+id = 7
+
+[node name="TileMapPast" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAD9/wYAAQABAAEAAAD+/wYAAQABAAEAAAD//wYAAQABAAEAAAAAAAYAAQABAAEAAAABAAYAAQABAAEAAAACAAYAAQABAAEAAAADAAQAAQABAAEAAAAEAAMAAQABAAEAAAADAAcAAQABAAEAAAAEAAcAAQABAAEAAAAFAAcAAQABAAEAAAAGAAcAAQABAAEAAAAHAAcAAQABAAEAAAAIAAcAAQABAAEAAAAJAAcAAQABAAEAAAAKAAcAAQABAAEAAAALAAcAAQABAAEAAAAMAAcAAQABAAEAAAANAAcAAQABAAEAAAAOAAcAAQABAAEAAAAPAAcAAQABAAEAAAAHAAgAAQABAAEAAAAIAAgAAQABAAEAAAAGAAIAAQABAAEAAAAGAAAAAQABAAEAAAAJAP//AQABAAEAAAAKAAMAAQABAAEAAAALAAMAAQABAAEAAAAMAAMAAQABAAEAAAANAAMAAQABAAEAAAARAAAAAQABAAEAAAASAAAAAQABAAEAAAATAAIAAQABAAEAAAASAAYAAQABAAEAAAA=")
+tile_set = ExtResource("10_0v5lu")

@@ -14,4 +14,5 @@ func _process(delta: float) -> void:
 	$Sprite2D.position.y = 5*sin(time*2*PI/period)
 	
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	Events.emit_signal("victory")
+	if (body is CharacterBody2D):
+		Events.emit_signal("victory")

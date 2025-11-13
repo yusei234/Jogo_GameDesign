@@ -15,7 +15,7 @@ func _ready() -> void:
 	Events.connect("tempo_changed", _on_tempo_changed)
 
 func _process(delta: float) -> void:
-	if (position.y > 1000):
+	if (position.y > 1200):
 		Events.emit_signal("fall")
 		print("fall")
 	
