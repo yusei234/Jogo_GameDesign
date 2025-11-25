@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://ctxyh73y33dtx"]
+
+[ext_resource type="Script" uid="uid://qdbv8mn3ovln" path="res://sfx/sfx_player.gd" id="1_cr0sh"]
+[ext_resource type="AudioStream" uid="uid://dvadds4pafvlr" path="res://sfx/melting.mp3" id="2_7fxg0"]
+[ext_resource type="AudioStream" uid="uid://cxem0251yum4x" path="res://sfx/elec.mp3" id="3_7rnuh"]
+[ext_resource type="AudioStream" uid="uid://ghs4bimxvg65" path="res://sfx/car.mp3" id="4_ex4pl"]
+
+[sub_resource type="AudioStreamMP3" id="AudioStreamMP3_maam3"]
+
+[node name="SfxPlayer" type="Node"]
+script = ExtResource("1_cr0sh")
+
+[node name="AudioMelting" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_7fxg0")
+
+[node name="AudioElec" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_7rnuh")
+volume_db = -6.0
+
+[node name="AudioBirds" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamMP3_maam3")
+
+[node name="TimerBirds" type="Timer" parent="."]
+
+[node name="AudioCar" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_ex4pl")
+
+[connection signal="timeout" from="TimerBirds" to="." method="_on_timer_birds_timeout"]
