@@ -1,8 +1,8 @@
 extends Node
 
-var player
+@export var base_resolution := Vector2(1920, 1080)
 
-#For now the nodes are placeholder, will need to be modified when the corresponding work is done
+var player
 
 func _ready() -> void:
 	Events.connect("victory", _on_victory)
@@ -12,10 +12,13 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("Reset"):
 		get_tree().change_scene_to_packed(load(get_tree().current_scene.scene_file_path))
+	if Input.is_action_just_pressed("Exit"):
+		get_tree().quit()
 	
 func _on_victory():
 	$Victory.show()
 	print("Victory")
+	await get_tree().create_timer(0.5).timeout
 	get_tree().change_scene_to_packed(load(get_tree().current_scene.scene_file_path))
 	
 func _on_restart():

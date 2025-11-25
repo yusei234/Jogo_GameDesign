@@ -1,13 +1,13 @@
 [gd_scene load_steps=6 format=3 uid="uid://dntwcot00rscc"]
 
 [ext_resource type="Script" uid="uid://b2ximvprsepf7" path="res://Objects/pushable_brick.gd" id="1_p8vam"]
-[ext_resource type="Texture2D" uid="uid://d3c7omn44kcpm" path="res://assets/object/Spr_towerblock_0.png" id="2_svhwo"]
+[ext_resource type="Texture2D" uid="uid://dy7vou32pm64y" path="res://assets/object/Pushable.png" id="2_p8vam"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_tq1vc"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_svhwo")
+"texture": ExtResource("2_p8vam")
 }],
 "loop": true,
 "name": &"default",
@@ -26,6 +26,8 @@ mass = 0.1
 script = ExtResource("1_p8vam")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-2, 5.07692)
+scale = Vector2(0.088, 0.0855385)
 sprite_frames = SubResource("SpriteFrames_tq1vc")
 
 [node name="Area2D" type="Area2D" parent="."]

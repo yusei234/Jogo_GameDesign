@@ -8,12 +8,12 @@ func _on_changed(new_time) -> void:
 		$TileMapPast.show()
 		$TileMapPresent.hide()
 		$TileMapPast.enabled = true
-		await get_tree().create_timer(0.5).timeout
+		await get_tree().create_timer(0.1).timeout
 		$TileMapPresent.enabled = false
 		
 	elif (new_time == Events.Times.PRESENT):
 		$TileMapPast.hide()
 		$TileMapPresent.show()
 		$TileMapPresent.enabled = true
-		await get_tree().create_timer(0.5).timeout
+		await get_tree().create_timer(0.1).timeout
 		$TileMapPast.enabled = false

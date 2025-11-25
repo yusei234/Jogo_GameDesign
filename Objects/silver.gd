@@ -9,7 +9,7 @@ func _ready() -> void:
 func _on_button_pressed(button_id: int):
 	if button_id == id:
 		$AnimatedSprite2D.show()
-		$CollisionShape2D.disabled = false
+		collision_layer = 1
 		$Timer.start(5)
 		pressed_button_id = button_id
 
@@ -17,5 +17,5 @@ func _on_button_pressed(button_id: int):
 func _on_timer_timeout() -> void:
 	if pressed_button_id == id :
 		$AnimatedSprite2D.hide()
-		$CollisionShape2D.disabled = true
+		collision_layer = 2
 		pressed_button_id = -1

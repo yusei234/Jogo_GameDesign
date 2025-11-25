@@ -20,9 +20,9 @@ script = ExtResource("1_2dqhg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 visible = false
-position = Vector2(97.5, 8.71808)
-scale = Vector2(2.50521, 1.17628)
+position = Vector2(71, 2.21808)
+scale = Vector2(1.3125, 1.07472)
 sprite_frames = SubResource("SpriteFrames_r0axl")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(93, 9, 330, 40, 335, -41, 93, -71, -143, -37, -134, 44)
+polygon = PackedVector2Array(70, 49, 213, 76, 360, 65, 280, -6, 162, -55, -28, -46, -113, -13, -217, 69, -56, 72)
