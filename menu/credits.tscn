@@ -1,15 +1,25 @@
-[gd_scene load_steps=2 format=3 uid="uid://botivubbxv71x"]
+[gd_scene load_steps=3 format=3 uid="uid://botivubbxv71x"]
 
 [ext_resource type="Script" uid="uid://7s4wpiii86wm" path="res://menu/credits.gd" id="1_wp78b"]
+[ext_resource type="Texture2D" uid="uid://hm1lhns0xmaj" path="res://assets/Menu/credits.png" id="2_nidem"]
 
 [node name="Credit" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_wp78b")
 
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 2494.0
+offset_bottom = 1403.0
+texture = ExtResource("2_nidem")
+
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
+offset_left = 71.0
+offset_top = 46.0
+offset_right = 342.0
+offset_bottom = 292.0
+flat = true
 
 [connection signal="button_down" from="Button" to="." method="_on_button_button_down"]

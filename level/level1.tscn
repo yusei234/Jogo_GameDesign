@@ -16,7 +16,7 @@ position = Vector2(35, 248)
 scale = Vector2(0.75, 0.75)
 
 [node name="WatchPart" parent="." instance=ExtResource("8_hoo32")]
-position = Vector2(1850, 516)
+position = Vector2(1856, 573)
 
 [node name="TileMapPresent" type="TileMapLayer" parent="."]
 tile_set = ExtResource("8_vscsl")

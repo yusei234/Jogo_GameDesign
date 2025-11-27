@@ -1,16 +1,26 @@
-[gd_scene load_steps=2 format=3 uid="uid://73fg46nadbyw"]
+[gd_scene load_steps=3 format=3 uid="uid://73fg46nadbyw"]
 
 [ext_resource type="Script" uid="uid://hsymgum8oiwf" path="res://menu/menu.gd" id="1_j0t7f"]
+[ext_resource type="Texture2D" uid="uid://ctc4ymji0rqmk" path="res://assets/Menu/start screen.png" id="2_g18jx"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_j0t7f")
 
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 2439.0
+offset_bottom = 1372.0
+texture = ExtResource("2_g18jx")
+
 [node name="start" type="Button" parent="."]
 layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
+offset_left = 747.0
+offset_top = 1086.0
+offset_right = 1143.0
+offset_bottom = 1257.0
+flat = true
 
 [node name="quit" type="Button" parent="."]
 layout_mode = 0
@@ -19,8 +29,11 @@ offset_bottom = 8.0
 
 [node name="credits" type="Button" parent="."]
 layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
+offset_left = 1324.0
+offset_top = 1076.0
+offset_right = 1674.0
+offset_bottom = 1241.0
+flat = true
 
 [connection signal="button_down" from="start" to="." method="_on_start_button_down"]
 [connection signal="button_down" from="quit" to="." method="_on_quit_button_down"]

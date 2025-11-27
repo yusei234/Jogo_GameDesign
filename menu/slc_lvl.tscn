@@ -1,36 +1,61 @@
-[gd_scene load_steps=2 format=3 uid="uid://bar6xxuwd1r80"]
+[gd_scene load_steps=3 format=3 uid="uid://bar6xxuwd1r80"]
 
 [ext_resource type="Script" uid="uid://btflubcfnw1oa" path="res://menu/slc_lvl.gd" id="1_fba5t"]
+[ext_resource type="Texture2D" uid="uid://h6k3hjcchbxs" path="res://assets/Menu/levels.png" id="2_jb7ts"]
 
 [node name="SlcLvl" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_fba5t")
 
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 2425.0
+offset_bottom = 1364.0
+texture = ExtResource("2_jb7ts")
+
 [node name="lv1" type="Button" parent="."]
-offset_right = 8.0
-offset_bottom = 8.0
+offset_left = 614.0
+offset_top = 355.0
+offset_right = 852.0
+offset_bottom = 597.0
+flat = true
 
 [node name="lvl2" type="Button" parent="."]
-offset_right = 8.0
-offset_bottom = 8.0
+offset_left = 1103.0
+offset_top = 355.0
+offset_right = 1344.0
+offset_bottom = 572.0
+flat = true
 
 [node name="lvl3" type="Button" parent="."]
-offset_right = 8.0
-offset_bottom = 8.0
+offset_left = 1558.0
+offset_top = 347.0
+offset_right = 1825.0
+offset_bottom = 602.0
+flat = true
 
 [node name="lvl4" type="Button" parent="."]
-offset_right = 8.0
-offset_bottom = 8.0
+offset_left = 865.0
+offset_top = 781.0
+offset_right = 1107.0
+offset_bottom = 1015.0
+flat = true
 
 [node name="lvl5" type="Button" parent="."]
-offset_right = 8.0
-offset_bottom = 8.0
+offset_left = 1345.0
+offset_top = 790.0
+offset_right = 1579.0
+offset_bottom = 1032.0
+flat = true
 
 [node name="Menu" type="Button" parent="."]
 layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
+offset_left = 50.0
+offset_top = 46.0
+offset_right = 334.0
+offset_bottom = 267.0
+flat = true
 
 [connection signal="button_down" from="lv1" to="." method="_on_lv_1_button_down"]
 [connection signal="button_down" from="lvl2" to="." method="_on_lvl_2_button_down"]

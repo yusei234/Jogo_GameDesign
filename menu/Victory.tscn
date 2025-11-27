@@ -1,9 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://bamh4hg5h1e28"]
+[gd_scene load_steps=3 format=3 uid="uid://bamh4hg5h1e28"]
 
 [ext_resource type="Script" uid="uid://byktev2sexc2r" path="res://menu/victory.gd" id="1_x7l8x"]
+[ext_resource type="Texture2D" uid="uid://bqjhvk52knd3x" path="res://assets/Menu/Victory.png" id="2_bi8d0"]
 
 [node name="Victory" type="Node2D"]
 script = ExtResource("1_x7l8x")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 2422.0
+offset_bottom = 1351.0
+texture = ExtResource("2_bi8d0")
 
 [node name="Button" type="Button" parent="."]
 offset_right = 8.0

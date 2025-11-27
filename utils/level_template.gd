@@ -19,7 +19,7 @@ func _on_victory():
 	$Victory.show()
 	print("Victory")
 	await get_tree().create_timer(0.5).timeout
-	get_tree().change_scene_to_packed(load("res://menu/slc_lvl.tscn"))
+	get_tree().change_scene_to_packed(load("res://menu/Victory.tscn"))
 	
 func _on_restart():
 	get_tree().change_scene_to_packed(load(get_tree().current_scene.scene_file_path))
