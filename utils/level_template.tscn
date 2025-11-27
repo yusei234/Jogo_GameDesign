@@ -1,14 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://bv518y1mmffl2"]
+[gd_scene load_steps=4 format=3 uid="uid://bv518y1mmffl2"]
 
 [ext_resource type="Script" uid="uid://b3icygy142rcg" path="res://utils/level_template.gd" id="1_7iepv"]
 [ext_resource type="PackedScene" uid="uid://ctxyh73y33dtx" path="res://sfx/sfx_player.tscn" id="2_s7bas"]
+[ext_resource type="PackedScene" uid="uid://cww3ssrhj4g4u" path="res://utils/Background.tscn" id="3_uhid2"]
 
 [node name="LevelTemplate" type="Node"]
 script = ExtResource("1_7iepv")
-
-[node name="Background" type="Node2D" parent="."]
 
 [node name="Victory" type="Node2D" parent="."]
 visible = false
 
 [node name="SfxPlayer" parent="." instance=ExtResource("2_s7bas")]
+
+[node name="Background" parent="." instance=ExtResource("3_uhid2")]
+position = Vector2(1279, 712)

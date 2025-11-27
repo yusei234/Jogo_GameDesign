@@ -13,13 +13,13 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("Reset"):
 		get_tree().change_scene_to_packed(load(get_tree().current_scene.scene_file_path))
 	if Input.is_action_just_pressed("Exit"):
-		get_tree().quit()
+		get_tree().change_scene_to_packed(load("res://menu/slc_lvl.tscn"))
 	
 func _on_victory():
 	$Victory.show()
 	print("Victory")
 	await get_tree().create_timer(0.5).timeout
-	get_tree().change_scene_to_packed(load(get_tree().current_scene.scene_file_path))
+	get_tree().change_scene_to_packed(load("res://menu/slc_lvl.tscn"))
 	
 func _on_restart():
 	get_tree().change_scene_to_packed(load(get_tree().current_scene.scene_file_path))

@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://ctxyh73y33dtx"]
+[gd_scene load_steps=7 format=3 uid="uid://ctxyh73y33dtx"]
 
 [ext_resource type="Script" uid="uid://qdbv8mn3ovln" path="res://sfx/sfx_player.gd" id="1_cr0sh"]
 [ext_resource type="AudioStream" uid="uid://dvadds4pafvlr" path="res://sfx/melting.mp3" id="2_7fxg0"]
 [ext_resource type="AudioStream" uid="uid://cxem0251yum4x" path="res://sfx/elec.mp3" id="3_7rnuh"]
 [ext_resource type="AudioStream" uid="uid://ghs4bimxvg65" path="res://sfx/car.mp3" id="4_ex4pl"]
+[ext_resource type="AudioStream" uid="uid://dpfo7ywhtovic" path="res://sfx/Hyperfun.mp3" id="6_h1kfk"]
 
 [sub_resource type="AudioStreamMP3" id="AudioStreamMP3_maam3"]
 
@@ -24,5 +25,10 @@ stream = SubResource("AudioStreamMP3_maam3")
 
 [node name="AudioCar" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_ex4pl")
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_h1kfk")
+volume_db = -30.0
+autoplay = true
 
 [connection signal="timeout" from="TimerBirds" to="." method="_on_timer_birds_timeout"]

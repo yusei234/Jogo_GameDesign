@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://botivubbxv71x"]
+
+[ext_resource type="Script" uid="uid://7s4wpiii86wm" path="res://menu/credits.gd" id="1_wp78b"]
+
+[node name="Credit" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_wp78b")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]

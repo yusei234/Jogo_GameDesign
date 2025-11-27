@@ -1,0 +1,40 @@
+[gd_scene load_steps=2 format=3 uid="uid://bar6xxuwd1r80"]
+
+[ext_resource type="Script" uid="uid://btflubcfnw1oa" path="res://menu/slc_lvl.gd" id="1_fba5t"]
+
+[node name="SlcLvl" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_fba5t")
+
+[node name="lv1" type="Button" parent="."]
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="lvl2" type="Button" parent="."]
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="lvl3" type="Button" parent="."]
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="lvl4" type="Button" parent="."]
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="lvl5" type="Button" parent="."]
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="Menu" type="Button" parent="."]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[connection signal="button_down" from="lv1" to="." method="_on_lv_1_button_down"]
+[connection signal="button_down" from="lvl2" to="." method="_on_lvl_2_button_down"]
+[connection signal="button_down" from="lvl3" to="." method="_on_lvl_3_button_down"]
+[connection signal="button_down" from="lvl4" to="." method="_on_lvl_4_button_down"]
+[connection signal="button_down" from="lvl5" to="." method="_on_lvl_5_button_down"]
+[connection signal="button_down" from="Menu" to="." method="_on_menu_button_down"]

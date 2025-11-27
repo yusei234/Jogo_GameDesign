@@ -11,6 +11,7 @@ var time = Events.Times.PAST
 
 func _ready() -> void:
 	Events.connect("block_break", func(): audio_melting.play())
+	@warning_ignore("unused_parameter")
 	Events.connect("button_pressed", func(id): audio_elec.play())
 	Events.connect("time_changed", _on_time_changed)
 	

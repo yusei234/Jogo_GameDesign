@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://bamh4hg5h1e28"]
+
+[ext_resource type="Script" uid="uid://byktev2sexc2r" path="res://menu/victory.gd" id="1_x7l8x"]
+
+[node name="Victory" type="Node2D"]
+script = ExtResource("1_x7l8x")
+
+[node name="Button" type="Button" parent="."]
+offset_right = 8.0
+offset_bottom = 8.0
+
+[connection signal="button_down" from="Button" to="." method="_on_retour_lvl_slct_button_down"]
