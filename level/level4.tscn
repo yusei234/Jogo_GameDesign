@@ -1,10 +1,9 @@
-[gd_scene load_steps=15 format=4 uid="uid://digae5cvt6vfx"]
+[gd_scene load_steps=14 format=4 uid="uid://digae5cvt6vfx"]
 
 [ext_resource type="PackedScene" uid="uid://bv518y1mmffl2" path="res://utils/level_template.tscn" id="1_nfnjx"]
 [ext_resource type="PackedScene" uid="uid://detg3drk1udpf" path="res://Objects/breakable_brick.tscn" id="2_wum6e"]
 [ext_resource type="PackedScene" uid="uid://17k75n0sr0tt" path="res://Objects/gold.tscn" id="4_pkjk0"]
 [ext_resource type="PackedScene" uid="uid://by51xdjmkv5h1" path="res://Objects/silver.tscn" id="5_1eya2"]
-[ext_resource type="PackedScene" uid="uid://1oeiubyksqvb" path="res://Objects/bronze.tscn" id="5_nfnjx"]
 [ext_resource type="PackedScene" uid="uid://datxaxbrujw1" path="res://Objects/button.tscn" id="6_klaxm"]
 [ext_resource type="PackedScene" uid="uid://csd2ad8qo3lm" path="res://player/player.tscn" id="7_x8w8t"]
 [ext_resource type="PackedScene" uid="uid://q3ex03ydb7vn" path="res://mecanism/agetravel.tscn" id="8_ragw8"]
@@ -52,9 +51,6 @@ id = 1
 
 [node name="Button5" parent="Obstacles" instance=ExtResource("6_klaxm")]
 position = Vector2(-23, -31)
-
-[node name="Bronze" parent="Obstacles" instance=ExtResource("5_nfnjx")]
-position = Vector2(-1587, 240)
 
 [node name="Player" parent="." instance=ExtResource("7_x8w8t")]
 position = Vector2(285, 168)
